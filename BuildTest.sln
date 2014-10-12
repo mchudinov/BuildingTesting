@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTest", "BuildTest\Buil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{B0AF73EC-0137-4F74-B733-C1575C903876}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC4C5B7F-CC01-4DAE-B586-4DBD35B03964}"
+	ProjectSection(SolutionItems) = preProject
+		Build.proj = Build.proj
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +24,8 @@ Global
 		{B0AF73EC-0137-4F74-B733-C1575C903876}.Debug|x86.Build.0 = Debug|Any CPU
 		{B0AF73EC-0137-4F74-B733-C1575C903876}.Release|x86.ActiveCfg = Release|Any CPU
 		{B0AF73EC-0137-4F74-B733-C1575C903876}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = BuildTest\BuildTest.csproj
