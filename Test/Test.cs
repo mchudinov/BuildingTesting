@@ -4,7 +4,7 @@ using BuildTest;
 namespace Test
 {
     [TestFixture()]
-    public class MyClassTest
+    class MyClassTest
     {
         [Test()]
         public void MultiplyTest()

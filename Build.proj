@@ -28,7 +28,8 @@
   <UsingTask AssemblyFile="packages/MSBuildTasks.1.4.0.78/tools/MSBuild.Community.Tasks.dll" TaskName="NUnit"/> 
   <Target Name="Test">
     <Message Text="Run tests" />
-    <NUnit Assemblies="Test/bin/Release/Test.dll" ToolPath="/usr/bin" />
+    <NUnit Assemblies="Test/bin/Release/Test.dll" ToolPath="/usr/bin" Condition=" '$(OS)' == 'Unix'" />
+	<NUnit Assemblies="Test/bin/Release/Test.dll" ToolPath="c:\lib\nunit\bin\" Condition=" '$(OS)' == 'Windows_NT'" />
   </Target>
-
+  
 </Project>

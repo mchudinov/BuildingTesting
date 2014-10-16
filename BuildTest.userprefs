@@ -1,13 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BuildTest/Build.proj">
-    <Files>
-      <File FileName="Test/Test.cs" Line="49" Column="49" />
-      <File FileName="BuildTest/Program.cs" Line="49" Column="49" />
-      <File FileName="BuildTest/MyClass.cs" Line="6" Column="6" />
-      <File FileName="BuildTest/Build.proj" Line="25" Column="25" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
+      <Pad Id="ClassPad">
+        <State expanded="True">
+          <Node name="BuildTest" expanded="True" selected="True">
+            <Node name="BuildTest" expanded="True" />
+          </Node>
+          <Node name="Test" expanded="True">
+            <Node name="Test" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />
       </Pad>
