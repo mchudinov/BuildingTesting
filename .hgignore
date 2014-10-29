@@ -5,3 +5,4 @@ Test/bin
 Test/obj
 BuildTest/bin
 TestResult.xml
+*.userprefs
