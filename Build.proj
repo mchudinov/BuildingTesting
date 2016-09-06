@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Run">   
-
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Run">
+  <PropertyGroup>
+    <Configuration>Release</Configuration>
+    <SolutionName>BuildTest</SolutionName>
+  </PropertyGroup>
+  
    <Target Name="Run">
     <CallTarget Targets="Clean" />
     <CallTarget Targets="Restore" />
@@ -10,8 +14,8 @@
  
   <Target Name="Clean">
     <Message Text="Clean" />
-    <RemoveDir Directories="BuildTest/bin; Test/bin;" ContinueOnError="False"/>
-    <RemoveDir Directories="BuildTest/obj; Test/obj;" ContinueOnError="False"/>
+    <RemoveDir Directories="$(SolutionName)/bin; Test/bin;" ContinueOnError="False"/>
+    <RemoveDir Directories="$(SolutionName)/obj; Test/obj;" ContinueOnError="False"/>
   </Target>
 
  <Target Name="Restore">
@@ -20,16 +24,16 @@
   </Target>
   
   <Target Name="Build">
-    <Message Text="Build Release" />
-    <MSBuild Projects="BuildTest/BuildTest.csproj" Properties="Configuration=Release" ContinueOnError="False"/>
-    <MSBuild Projects="Test/Test.csproj" Properties="Configuration=Release" ContinueOnError="False"/>
+    <Message Text="Build $(Configuration)" />
+    <MSBuild Projects="$(SolutionName)/BuildTest.csproj" Properties="Configuration=$(Configuration)" ContinueOnError="False"/>
+    <MSBuild Projects="Test/Test.csproj" Properties="Configuration=$(Configuration)" ContinueOnError="False"/>
   </Target>
 
-  <UsingTask AssemblyFile="packages/MSBuildTasks.1.4.0.78/tools/MSBuild.Community.Tasks.dll" TaskName="NUnit"/> 
-  <Target Name="Test">
-    <Message Text="Run tests" />
-    <NUnit Assemblies="Test/bin/Release/Test.dll" ToolPath="/usr/bin" Condition=" '$(OS)' == 'Unix'" />
-	<NUnit Assemblies="Test/bin/Release/Test.dll" ToolPath="c:\lib\nunit\bin\" Condition=" '$(OS)' == 'Windows_NT'" />
-  </Target>
+  <UsingTask AssemblyFile="packages/MSBuildTasks.1.5.0.196/tools/MSBuild.Community.Tasks.dll" TaskName="NUnit"/> 
+	<Target Name="Test">
+		<Message Text="Run tests" />
+		<NUnit Assemblies="Test/bin/$(Configuration)/Test.dll" ToolPath="/usr/bin" Condition=" '$(OS)' == 'Unix'" />
+		<NUnit Assemblies="Test/bin/$(Configuration)/Test.dll" ToolPath="C:\Program Files (x86)\NUnit.org\nunit-console" Condition=" '$(OS)' == 'Windows_NT'" />
+	</Target>
   
 </Project>

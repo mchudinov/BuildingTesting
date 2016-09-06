@@ -25,7 +25,8 @@ Global
 		{B0AF73EC-0137-4F74-B733-C1575C903876}.Release|x86.ActiveCfg = Release|Any CPU
 		{B0AF73EC-0137-4F74-B733-C1575C903876}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = BuildTest\BuildTest.csproj

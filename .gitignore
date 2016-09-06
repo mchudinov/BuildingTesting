@@ -1,0 +1,7 @@
+BuildTest/bin/
+packages/
+Test/obj/
+Test/bin/
+BuildTest/obj/
+*.suo
+TestResult.xml
