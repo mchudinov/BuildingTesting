@@ -5,3 +5,4 @@ Test/bin/
 BuildTest/obj/
 *.suo
 TestResult.xml
+/.localhistory/

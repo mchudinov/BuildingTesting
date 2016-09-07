@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Run">
   <PropertyGroup>
     <Configuration>Release</Configuration>
-    <SolutionName>BuildTest</SolutionName>
+    <ProjectName>BuildTest</ProjectName>
   </PropertyGroup>
   
    <Target Name="Run">
@@ -14,8 +14,8 @@
  
   <Target Name="Clean">
     <Message Text="Clean" />
-    <RemoveDir Directories="$(SolutionName)/bin; Test/bin;" ContinueOnError="False"/>
-    <RemoveDir Directories="$(SolutionName)/obj; Test/obj;" ContinueOnError="False"/>
+    <RemoveDir Directories="$(ProjectName)/bin; Test/bin;" ContinueOnError="False"/>
+    <RemoveDir Directories="$(ProjectName)/obj; Test/obj;" ContinueOnError="False"/>
   </Target>
 
  <Target Name="Restore">
@@ -25,7 +25,7 @@
   
   <Target Name="Build">
     <Message Text="Build $(Configuration)" />
-    <MSBuild Projects="$(SolutionName)/BuildTest.csproj" Properties="Configuration=$(Configuration)" ContinueOnError="False"/>
+    <MSBuild Projects="$(ProjectName)/$(ProjectName).csproj" Properties="Configuration=$(Configuration)" ContinueOnError="False"/>
     <MSBuild Projects="Test/Test.csproj" Properties="Configuration=$(Configuration)" ContinueOnError="False"/>
   </Target>
 
